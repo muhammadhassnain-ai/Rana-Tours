@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let jsonData = null;
 
     // 1. Load your JSON file
-    fetch('travel_recommendation_api.json')
+    fetch('travelRecommendation/travel_recommendation_api.json')
         .then(res => res.json())
         .then(data => {
             jsonData = data;
