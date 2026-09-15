@@ -1,0 +1,171 @@
+/* ===== ABOUT PAGE CSS FOR RANA TOURS ===== */
+
+/* Use same background as home */
+body {
+    background: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1920') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+/* Blue overlay - same as home */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 82, 107, 0.85) 0%, rgba(0, 82, 107, 0.3) 60%);
+    z-index: -1;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.about-container {
+    display: flex;
+    padding: 100px 60px 60px 60px;
+    min-height: 100vh;
+    gap: 40px;
+}
+
+/* ===== LEFT SOCIAL ICONS - Same as home ===== */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding-top: 20px;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 120px;
+    background: white;
+}
+
+.social-icons img {
+    width: 20px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.social-icons img:hover { transform: scale(1.2); }
+
+/* ===== RIGHT CONTENT ===== */
+.about-content {
+    flex: 1;
+}
+
+/* ===== ABOUT TITLE ===== */
+.about-title {
+    font-size: 60px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+}
+
+/* ===== RED BOX 1: ABOUT INFO ===== */
+.about-info-box {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 900px;
+    margin-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-info-box p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+/* ===== RED BOX 2: TEAM SECTION ===== */
+.team-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* "Our Team" heading */
+.team-heading {
+    font-size: 55px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    min-width: 160px;
+}
+
+/* Team Cards Wrapper */
+.team-cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+/* Individual Team Card */
+.team-card {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 20px;
+    width: 230px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+.team-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Circle */
+.team-icon {
+    width: 45px;
+    height: 45px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.team-icon img {
+    width: 25px;
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(169deg) brightness(94%) contrast(101%);
+}
+
+/* Card Content */
+.team-card h3 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.team-card p {
+    font-size: 13px;
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* Role Tag - CEO, Team Lead */
+.role-tag {
+    background: #006d77;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .about-container { flex-direction: column; padding: 80px 30px; }
+    .team-section { flex-direction: column; }
+    .team-heading { font-size: 40px; }
+    .team-cards { justify-content: center; }
+}

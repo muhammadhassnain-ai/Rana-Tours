@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rana Tours - Explore Dream Destination</title>
+    <link rel="stylesheet" href="travel_recommendation.css">
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="https://img.icons8.com/?size=64&id=17486&format=png" alt="Logo">
+            <span>Rana Tours</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="travel_recommendation.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
+            <img src="https://img.icons8.com/?size=64&id=14079&format=png" alt="Search" class="search-icon">
+            <button class="search-btn" id="searchBtn" onclick="searchTravel()">Search</button>
+            <button class="clear-btn" id="clearBtn">Clear</button>
+        </div>
+
+        <!--Error Message Top Right-->
+        <p id="errorMsg" class="error-msg" style="display:none;"></p>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="home-container">
+        
+        <!-- LEFT SOCIAL ICONS -->
+        <div class="social-icons">
+            <div class="vertical-line"></div>
+            <a href="#"><img src="https://img.icons8.com/?size=64&id=jlpBF1fJe9fs&format=png" alt="Twitter"></a>
+            <a href="#"><img src="https://img.icons8.com/?size=64&id=118484&format=png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/?size=64&id=32320&format=png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/?size=64&id=15979&format=png" alt="YouTube"></a>
+        </div>
+
+        <!-- HERO TEXT -->
+        <div class="hero-text">
+            <h1>EXPLORE<br>DREAM<br>DESTINATION</h1>
+            <p>
+                It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes, 
+                while pursuing the desired destination that captivates the heart and ignites a sense of wonder.
+            </p>
+            <button class="book-btn" id="bookNowbtn">BOOK NOW</button>
+        </div>
+
+        <!-- DOTTED PATTERN -->
+        <div class="dot-pattern">
+            <!-- 5x5 dots for background effect -->
+        </div>
+
+    </main>
+
+    
+
+    <!-- RESULTS CONTAINER FOR JS -->
+    <div id="results-grid" class="results-grid"></div>
+
+    <script src="travel_recommendation.js"></script>
+</body>
+</html>

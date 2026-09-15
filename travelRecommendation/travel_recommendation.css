@@ -1,0 +1,358 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=1920') no-repeat center center/cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Blue overlay on background image */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 82, 107, 0.85) 0%, rgba(0, 82, 107, 0.3) 60%);
+    z-index: -1;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 35px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #00c3ff;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 30px;
+    padding: 5px 5px 5px 15px;
+    gap: 5px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 220px;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+}
+
+.search-icon {
+    width: 18px;
+    margin-right: 5px;
+}
+
+.search-btn, .clear-btn {
+    background: #006d77;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.clear-btn {
+    background: #005f73;
+}
+
+.search-btn:hover, .clear-btn:hover {
+    opacity: 0.8;
+}
+
+/* Error message top right */
+.error-msg {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    font-size: 14px;
+    color: #ffdddd;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.home-container {
+    display: flex;
+    align-items: center;
+    padding: 80px 50px;
+    min-height: calc(100vh - 70px);
+}
+
+/* ===== LEFT SOCIAL ICONS ===== */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-right: 60px;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 120px;
+    background: white;
+}
+
+.social-icons img {
+    width: 20px;
+    filter: brightness(0) invert(1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* ===== HERO TEXT ===== */
+.hero-text h1 {
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 350px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.book-btn {
+    background: #006d77;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: #005f73;
+    transform: scale(1.05);
+}
+
+/* ===== DOT PATTERN ===== */
+.dot-pattern {
+    position: absolute;
+    top: 150px;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(white 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+/* ===== RESULTS CARDS ===== */
+#results {
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 450px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.result-card img { 
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover; 
+}
+
+.result-content { 
+    padding: 20px; 
+}
+
+.result-content h3 { 
+    margin-bottom: 10px; 
+    color: #006d77;
+}
+
+.visit-btn { 
+    background: #006d77; 
+    color: white; 
+    border: none; 
+    padding: 8px 20px; 
+    margin-top: 10px; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .hero-text h1 { font-size: 40px; }
+    .home-container { flex-direction: column; padding: 40px 20px; }
+    .social-icons { flex-direction: row; margin-right: 0; margin-bottom: 30px; }
+    .vertical-line { display: none; }
+}
+
+.error-msg {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    color: #ffdddd;
+    font-size: 14px;
+}
+#results {
+    padding: 40px 80px;
+}
+/* ===== RESULTS CONTAINER - FIXES YOUR SCREENSHOT ISSUE ===== */
+#results-grid {
+    position: absolute;
+    top: 110px; /* Below your Search bar */
+    right: 20px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 card per row like your screenshot */
+    gap: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+/* Hide scrollbar - clean look */
+#results-grid::-webkit-scrollbar {
+    width: 6px;
+}
+#results-grid::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+
+/* EACH CARD - Like in your screenshot - Image left + text right */
+.result-card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    animation: slideIn 0.4s ease;
+    min-height: 180px;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.result-card img {
+    width: 180px;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.result-content {
+    padding: 15px 18px;
+    flex: 1;
+    background: white;
+}
+
+.result-content h3 {
+    color: #0d6d6d; /* Teal color like your screenshot */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: sans-serif;
+}
+
+.result-content p {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+/* FOR BIG SCREEN - 2 Columns grid option if you want */
+@media (min-width: 1200px) {
+    #results-grid {
+        width: 650px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* FOR MOBILE */
+@media (max-width: 768px) {
+    #results-grid {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 120%;
+        margin: 20px auto;
+        max-height: none;
+    }
+    .result-card {
+        flex-direction: column;
+    }
+    .result-card img {
+        width: 100%;
+        height: 200px;
+    }
+}
